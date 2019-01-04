@@ -7,13 +7,15 @@ Use-Case
 
 In this setup we are going to send data from kafka avro producer to aws aurora mysql database. For this we are using avro converter to convert schema.
 
+####################
 Steps to be followed
-''''''''''''''''''''
+####################
 
 Step1:-
 =======
 
 Install java8 on each server(login to root)
+-------------------------------------------
 
 .. Command        $yum install java
 
@@ -21,6 +23,7 @@ Step2:-
 =======
 
 Download confluent on each server using following command
+---------------------------------------------------------
 
 .. Command $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
 
@@ -31,6 +34,7 @@ Step3:-
 
 Start the zookeeper on each server using following command.
 -----------------------------------------------------------
+
 Go to the `bin` location of confluent(form me it's in root)
 
 .. Command $cd /root/confluent-4.1.0/bin
@@ -47,9 +51,11 @@ If it is running on 2181 port then start it in daemon mode as follow
 Step4:-
 =======
 
-Start the kafka server on each server. Change the following parameters in ``server.properties`` on each server.
-It is resides into ``/root/confluent-4.1.0/etc/kafka/`` location.
-------------------------------------------------------------------
+Start the kafka server on each server.
+---------------------------------------
+
+Change the following parameters in ``server.properties`` on each server.It is resides into ``/root/confluent-4.1.0/etc/kafka/`` location.
+
 
         `broker.id=0  (change for each server as 0,1,2)`
         `listeners=PLAINTEXT://hostname or ip address:9092`
@@ -72,7 +78,7 @@ Step5:-
 =======
 
 Check the cluster setup. 
-------------------------
+#######################
 
 Create a topic on one of the server.
 ------------------------------------
