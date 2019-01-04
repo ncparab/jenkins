@@ -19,11 +19,11 @@ Kafka is generally used for two broad classes of applications:
 - Building real-time streaming applications that transform or react to the streams of data
 
 .. image:: Capture1.PNG
-  :width: 200px
-  :height: 100px
+  :width: 600px
+  :height: 400px
   :scale: 50 %
   :alt: alternate text
-  :align: right
+  
 
 ############################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
