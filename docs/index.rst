@@ -42,7 +42,9 @@ Step1
 
 - Install java8 on each server(login to root)
 
-.. Command::  $yum install java
+.. code-block:: bash  
+ 
+ $yum install java
 
 Step2
 ------
@@ -50,9 +52,11 @@ Step2
 - Download confluent on each server using following command
 
 
-.. Command:: $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
+.. code-block:: bash
 
-             $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
+$wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
+
+$tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
 Step3
 ------
