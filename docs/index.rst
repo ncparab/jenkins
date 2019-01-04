@@ -196,8 +196,8 @@ Start kafka standalone as follow
         $./connect-standalone  ../etc/schema-registry/connect-avro-standalone.properties  ../etc/kafka-connect-jdbc/sink-mysql-jdbc.properties
 
 
-.. image:: docs/Capture1.PNG
-   :width: 500
+.. image:: /docs/Capture1.PNG
+  :width: 200
 
 Open another terminal for same server as above and start avro console producer 
 
