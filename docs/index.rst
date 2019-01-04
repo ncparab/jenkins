@@ -19,9 +19,8 @@ Kafka is generally used for two broad classes of applications:
 - Building real-time streaming applications that transform or react to the streams of data
 
 .. image:: Capture2.PNG
-  :width: 600px
-  :height: 400px
-  :scale: 50 %
+  :width: 800px
+  :height: 700px
   :alt: alternate text
   
 
