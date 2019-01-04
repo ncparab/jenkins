@@ -21,27 +21,29 @@ Kafka is generally used for two broad classes of applications:
 
 
 
-
+############################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
-##########################################################################
+############################################################################
 
 Use-Case
---------
+########
 
 In this setup we are going to send data from kafka avro producer to aws aurora mysql database. For this we are using avro converter to convert schema.
 
 
 Steps to be followed
-----------------------
+######################
 
-:ref:`Step1`
+Step1
+-----
 
 Install java8 on each server(login to root)
 ===========================================
 
-.. Command        $yum install java
+.. Command  $yum install java
 
-:ref:`Step2`
+Step2
+------
 
 Download confluent on each server using following command
 ==========================================================
@@ -50,7 +52,8 @@ Download confluent on each server using following command
 
            $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
-:ref:`Step3`
+Step3
+------
 
 Start the zookeeper on each server using following command.
 ===========================================================
@@ -68,8 +71,8 @@ If it is running on 2181 port then start it in daemon mode as follow
 
            $netstat -anp|grep 2181     (for checking, it is running or not)
 
-:ref:`Step4`
-
+Step4
+-------
 
 Start the kafka server on each server.
 =======================================
@@ -94,7 +97,8 @@ If it running on port 9092 then again start it in daemon mode as follow
 
            $netstat -anp|grep 9092 
 
-:ref:`Step5`
+Step5
+-------
 
 Check the cluster setup. 
 ========================
@@ -137,7 +141,7 @@ Install mysql on one of the server and start the mysql service(login to root)
 
            $service mysqld start
 
-:ref:`Step7`
+Step7
 -----------
 
 Create mysql instance on aws and login to mysql instance as follow
@@ -162,7 +166,8 @@ Set the classpath on one of the server where you want to run schema registry and
 
        $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
-:ref:`Step8`
+Step8
+------
 
 Start schema registry on same server where you set classpath
 ============================================================
