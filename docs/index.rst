@@ -18,8 +18,7 @@ Kafka is generally used for two broad classes of applications:
 - Building real-time streaming data pipelines that reliably get data between systems or applications
 - Building real-time streaming applications that transform or react to the streams of data
 
-.. image:: C:\Users\Tesseract\Documents\Capture2.PNG
-  :width: 300
+.. image:: https://github.com/ncparab/jenkins/blob/master/docs/Capture2.PNG
 
 ############################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
