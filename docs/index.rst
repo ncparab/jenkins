@@ -19,6 +19,8 @@ Kafka is generally used for two broad classes of applications:
 - Building real-time streaming applications that transform or react to the streams of data
 
 
+
+
 ##########################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
 ##########################################################################
@@ -28,32 +30,33 @@ Use-Case
 
 In this setup we are going to send data from kafka avro producer to aws aurora mysql database. For this we are using avro converter to convert schema.
 
+
+
 ####################
 Steps to be followed
 ####################
 
-Step1
-#######
+edit: :ref:`Step1`
 
-:ref:`Install java8 on each server(login to root)`
+
+Install java8 on each server(login to root)
 --------------------------------------------------
 
 .. Command        $yum install java
 
-Step2 
-#######
+edit: :ref:`Step2`
 
-:ref:`Download confluent on each server using following command`
+
+Download confluent on each server using following command
 ---------------------------------------------------------------
 
 .. Command $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
 
            $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
-Step3
-#######
+edit: :ref:`Step3`
 
-:ref:`Start the zookeeper on each server using following command.`
+Start the zookeeper on each server using following command.
 -----------------------------------------------------------------
 
 Go to the `bin` location of confluent(form me it's in root)
@@ -69,10 +72,10 @@ If it is running on 2181 port then start it in daemon mode as follow
 
            $netstat -anp|grep 2181     (for checking, it is running or not)
 
-Step4
-#######
+edit: :ref:`Step4`
 
-:ref:`Start the kafka server on each server.`
+
+Start the kafka server on each server.
 --------------------------------------------
 
 Change the following parameters in ``server.properties`` on each server.It is resides into ``/root/confluent-4.1.0/etc/kafka/`` location.
@@ -95,14 +98,12 @@ If it running on port 9092 then again start it in daemon mode as follow
 
            $netstat -anp|grep 9092 
 
-Step5
-######
+edit: :ref:`Step5`
 
-:ref:`Check the cluster setup.` 
+Check the cluster setup. 
 --------------------------------
 
 Create a topic on one of the server.
-------------------------------------
 
 .. Command $cd  /storage/confluent-4.1.0/
     
@@ -130,20 +131,18 @@ Now you can send the messages from producer and those messages get populated at 
 .. image:: https://github.com/N-CP/github/blob/master/Capture1.JPG
    :width: 500
 
-Step6
-######
+edit: :ref:`Step6`
 
-:ref:`Install mysql on one of the server and start the mysql service(login to root)`
+Install mysql on one of the server and start the mysql service(login to root)
 -----------------------------------------------------------------------------------
 
 .. Command $yum install mysql-server
 
            $service mysqld start
 
-Step7
-#######
+edit: :ref:`Step7`
 
-:ref:`Create mysql instance on aws and login to mysql instance as follow`
+Create mysql instance on aws and login to mysql instance as follow
 -------------------------------------------------------------------------
 
 .. Command $mysql –h <hostname of mysql instance> -u <username> -p <password>
@@ -159,16 +158,15 @@ For aws mysql connection download following package
            $rpm  -ivh mysql-community-release-el7-5.noarch.rpm 
 
 Set the classpath on one of the server where you want to run schema registry and connect- statndlone 
-----------------------------------------------------------------------------------------------------
+
 
 .. Command $ export CLASSPATH=$CLASSPATH:.:/root/confluent-4.1.0/share/java/kafka-connect-jdbc/mysql-connector-java-               5.1.46.jar:/root/confluent-4.1.0/share/java/kafka-connect-jdbc/kafka-connect-jdbc-4.1.0.jar
 
        $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
-Step8
-######
+edit: :ref:`Step8`
 
-:ref:`Start schema registry on same server where you set classpath`
+Start schema registry on same server where you set classpath
 ------------------------------------------------------------
 
 Change <kafkastore.bootstrap.servers=PLAINTEXT://x.x.x.x:9092> in "/root/confluent-4.1.0/etc/schema-registry/schema-registry.properties" file.
