@@ -44,7 +44,7 @@ Step1
 
 .. code-block:: bash  
  
- $yum install java
+  $yum install java
 
 Step2
 ------
@@ -54,9 +54,9 @@ Step2
 
 .. code-block:: bash
 
-$wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
+  $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
 
-$tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
+  $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
 Step3
 ------
@@ -65,16 +65,20 @@ Step3
 
 - Go to the `bin` location of confluent(form me it's in root)
 
-.. Command:: $cd /root/confluent-4.1.0/bin
+.. code-block:: bash
+  
+   $cd /root/confluent-4.1.0/bin
 
-             $./zookeeper-server-start  ../etc/kafka/zookeeper.properties
+   $./zookeeper-server-start  ../etc/kafka/zookeeper.properties
 
 - If it is running on 2181 port then start it in daemon mode as follow
 
 
-.. Command $ ./zookeeper-server-start -daemon ../etc/kafka/zookeeper.properties
+.. code-block:: bash
+ 
+   $ ./zookeeper-server-start -daemon ../etc/kafka/zookeeper.properties
 
-           $netstat -anp|grep 2181     (for checking, it is running or not)
+   $netstat -anp|grep 2181     (for checking, it is running or not)
 
 Step4
 -------
@@ -91,15 +95,19 @@ Step4
 - Now start kafka server using following command
 
 
-.. Command $ cd /root/confluent-4.1.0/bin
+.. code-block:: bash
+
+   $ cd /root/confluent-4.1.0/bin
  
-           $./kafka-server-start  ../etc/kafka/server.properties
+   $./kafka-server-start  ../etc/kafka/server.properties
 
 - If it running on port 9092 then again start it in daemon mode as follow
 
-.. Command $./kafka-server-start -daemon ../etc/kafka/server.properties
+.. code-block:: bash
 
-           $netstat -anp|grep 9092 
+   $./kafka-server-start -daemon ../etc/kafka/server.properties
+
+   $netstat -anp|grep 9092 
 
 Step5
 -------
@@ -108,28 +116,36 @@ Step5
 
 - Create a topic on one of the server.
 
-.. Command $cd  /storage/confluent-4.1.0/
+.. code-block:: bash 
+   
+   $cd  /storage/confluent-4.1.0/
     
-            $./kafka-topics --create --zookeeper x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181 -- replication-factor 1 --partitions 1 --topic demotopic
+   $./kafka-topics --create --zookeeper x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181 -- replication-factor 1 --partitions 1 --topic demotopic
 
 - You can check that topic is created on each server using following command
 
 
-.. Command $./kafka-topics --list --zookeeper  x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181
+.. code-block:: bash
+ 
+   $./kafka-topics --list --zookeeper  x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181
 
 It will list topic which is created.
 
 - start the producer in the same terminal of topic
 
-.. Command $./kafka-console-producer --broker-list  x.x.x.x:9092,x.x.x.x:9092,x.x.x.x:9092 --topic demotopic
+.. code-block:: bash
+
+   $./kafka-console-producer --broker-list  x.x.x.x:9092,x.x.x.x:9092,x.x.x.x:9092 --topic demotopic
 
 - Start the consumer on other two servers
 
-.. Command        $./bin/kafka-console-consumer --bootstrap-server x.x.x.x:9092,x.x.x.x:9092,x.x.x.x:9092 --topic demotopic --from-beginning
+.. code-block:: bash
+
+   $./bin/kafka-console-consumer --bootstrap-server x.x.x.x:9092,x.x.x.x:9092,x.x.x.x:9092 --topic demotopic --from-beginning
 
 Now you can send the messages from producer and those messages get populated at consumers as follow
 
-.. image:: https://github.com/N-CP/github/blob/master/Capture0.JPG
+.. image:: Capture0.JPG
   :width: 500
 
 Step6
@@ -137,33 +153,41 @@ Step6
 
 - Install mysql on one of the server and start the mysql service(login to root)
 
-.. Command $yum install mysql-server
+.. code-block:: bash
 
-           $service mysqld start
+   $yum install mysql-server
+
+   $service mysqld start
 
 Step7
 -----------
 
 - Create mysql instance on aws and login to mysql instance as follow
 
-.. Command $mysql –h <hostname of mysql instance> -u <username> -p <password>
+.. code-block:: bash
+
+   $mysql –h <hostname of mysql instance> -u <username> -p <password>
 
 - Download mysql-connector-java.jar and place it in confluent-4.1.0/share/java/kafka-connect-jdbc/ 
 
 - For aws mysql connection download following package 
 
-.. Command $yum list|grep mysql
+.. code-block:: bash
 
-           $wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+    $yum list|grep mysql
+
+    $wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
            
-           $rpm  -ivh mysql-community-release-el7-5.noarch.rpm 
+    $rpm  -ivh mysql-community-release-el7-5.noarch.rpm 
 
 - Set the classpath on one of the server where you want to run schema registry and connect- statndlone 
 
 
-.. Command $ export CLASSPATH=$CLASSPATH:.:/root/confluent-4.1.0/share/java/kafka-connect-jdbc/mysql-connector-java-               5.1.46.jar:/root/confluent-4.1.0/share/java/kafka-connect-jdbc/kafka-connect-jdbc-4.1.0.jar
+.. code-block:: bash
 
-       $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
+    $ export CLASSPATH=$CLASSPATH:.:/root/confluent-4.1.0/share/java/kafka-connect-jdbc/mysql-connector-java-               5.1.46.jar:/root/confluent-4.1.0/share/java/kafka-connect-jdbc/kafka-connect-jdbc-4.1.0.jar
+
+    $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
 Step8
 ------
@@ -174,15 +198,19 @@ Step8
 
 - Start schema registry as follow
 
-.. Command $cd /storage/confluent-4.1.0/bin
+.. code-block:: bash
 
-           $./schema-registry-start ../etc/schema-registry/schema-registry.properties
+   $cd /storage/confluent-4.1.0/bin
+
+   $./schema-registry-start ../etc/schema-registry/schema-registry.properties
 
 If is is running on port 8081 then start it in daemon mode 
 
-.. Command $./schema-registry-start -daemon ../etc/schema-registry/schema-registry.properties
+.. code-block:: bash
 
-           $netstat -anp|grep 8081
+   $./schema-registry-start -daemon ../etc/schema-registry/schema-registry.properties
+
+   $netstat -anp|grep 8081
 
 - Change following parameter in "connect-avro-standalone.properties" file.
 
@@ -209,19 +237,23 @@ If is is running on port 8081 then start it in daemon mode
 
 - Start kafka standalone as follow
 
-.. Command        $cd /root/confluent-4.1.0/bin  
+.. code-block:: bash
+
+     $cd /root/confluent-4.1.0/bin  
     
-        $./connect-standalone  ../etc/schema-registry/connect-avro-standalone.properties  ../etc/kafka-connect-jdbc/sink-mysql-jdbc.properties
+     $./connect-standalone  ../etc/schema-registry/connect-avro-standalone.properties  ../etc/kafka-connect-jdbc/sink-mysql-jdbc.properties
 
 
-.. image:: https://github.com/ncparab/jenkins/blob/master/docs/Capture1.PNG
+.. image:: Capture1.PNG
   :width: 400
 
 - Open another terminal for same server as above and start avro console producer 
 
-.. Command $cd  confluent-4.1.0/bin
+.. code-block:: bash
 
-           $ ./kafka-avro-console-producer \--broker-list x.x.x.x:9092 --topic orders_data \--property    value.schema='{"type":"record","name":"myrecord","fields":[{"name":"id","type":"float"{"name":"PARTY_TYPE_ID","type":"float"},{"name":"PARTY_DESCRIPTION", "type": "string"},{"name":"PARTY_SHORT_DESCRIPTION", "type": "string"},{"name":"SOURCE_SYSTEM","type": "string"},{"name":"CREATED_DATETIME", "type": "string"}{"name":"MODIFIED_DATETIME","type":"string"}]}'
+    $cd  confluent-4.1.0/bin
+
+    $ ./kafka-avro-console-producer \--broker-list x.x.x.x:9092 --topic orders_data \--property    value.schema='{"type":"record","name":"myrecord","fields":[{"name":"id","type":"float"{"name":"PARTY_TYPE_ID","type":"float"},{"name":"PARTY_DESCRIPTION", "type": "string"},{"name":"PARTY_SHORT_DESCRIPTION", "type": "string"},{"name":"SOURCE_SYSTEM","type": "string"},{"name":"CREATED_DATETIME", "type": "string"}{"name":"MODIFIED_DATETIME","type":"string"}]}'
 
 It will get hang for some time. You have to enter the values as follow
 
