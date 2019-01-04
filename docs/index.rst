@@ -8,18 +8,16 @@ Apache Kafka® is a distributed streaming platform. What exactly does that mean?
 A streaming platform has three key capabilities:
 ------------------------------------------------
 
-    Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
-    
-    Store streams of records in a fault-tolerant durable way.
-    
-    Process streams of records as they occur.
+- Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
+- Store streams of records in a fault-tolerant durable way.
+- Process streams of records as they occur.
 
 Kafka is generally used for two broad classes of applications:
 --------------------------------------------------------------
 
-    Building real-time streaming data pipelines that reliably get data between systems or applications
-    
-    Building real-time streaming applications that transform or react to the streams of data
+- Building real-time streaming data pipelines that reliably get data between systems or applications
+- Building real-time streaming applications that transform or react to the streams of data
+
 
 ##########################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
@@ -37,16 +35,16 @@ Steps to be followed
 Step1
 #######
 
-Install java8 on each server(login to root)
--------------------------------------------
+:ref:`Install java8 on each server(login to root)`
+--------------------------------------------------
 
 .. Command        $yum install java
 
 Step2 
 #######
 
-Download confluent on each server using following command
----------------------------------------------------------
+:ref:`Download confluent on each server using following command`
+---------------------------------------------------------------
 
 .. Command $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
 
@@ -55,8 +53,8 @@ Download confluent on each server using following command
 Step3
 #######
 
-Start the zookeeper on each server using following command.
------------------------------------------------------------
+:ref:`Start the zookeeper on each server using following command.`
+-----------------------------------------------------------------
 
 Go to the `bin` location of confluent(form me it's in root)
 
@@ -74,8 +72,8 @@ If it is running on 2181 port then start it in daemon mode as follow
 Step4
 #######
 
-Start the kafka server on each server.
----------------------------------------
+:ref:`Start the kafka server on each server.`
+--------------------------------------------
 
 Change the following parameters in ``server.properties`` on each server.It is resides into ``/root/confluent-4.1.0/etc/kafka/`` location.
 
@@ -100,8 +98,8 @@ If it running on port 9092 then again start it in daemon mode as follow
 Step5
 ######
 
-Check the cluster setup. 
-========================
+:ref:`Check the cluster setup.` 
+--------------------------------
 
 Create a topic on one of the server.
 ------------------------------------
@@ -135,8 +133,8 @@ Now you can send the messages from producer and those messages get populated at 
 Step6
 ######
 
-Install mysql on one of the server and start the mysql service(login to root)
------------------------------------------------------------------------------
+:ref:`Install mysql on one of the server and start the mysql service(login to root)`
+-----------------------------------------------------------------------------------
 
 .. Command $yum install mysql-server
 
@@ -145,8 +143,8 @@ Install mysql on one of the server and start the mysql service(login to root)
 Step7
 #######
 
-Create mysql instance on aws and login to mysql instance as follow
-------------------------------------------------------------------
+:ref:`Create mysql instance on aws and login to mysql instance as follow`
+-------------------------------------------------------------------------
 
 .. Command $mysql –h <hostname of mysql instance> -u <username> -p <password>
 
@@ -170,7 +168,7 @@ Set the classpath on one of the server where you want to run schema registry and
 Step8
 ######
 
-Start schema registry on same server where you set classpath
+:ref:`Start schema registry on same server where you set classpath`
 ------------------------------------------------------------
 
 Change <kafkastore.bootstrap.servers=PLAINTEXT://x.x.x.x:9092> in "/root/confluent-4.1.0/etc/schema-registry/schema-registry.properties" file.
