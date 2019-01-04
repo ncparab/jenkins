@@ -189,7 +189,7 @@ Start kafka standalone as follow
         $./connect-standalone  ../etc/schema-registry/connect-avro-standalone.properties  ../etc/kafka-connect-jdbc/sink-mysql-jdbc.properties
 
 
-.. image::https://github.com/N-CP/github/blob/master/cap.jpg
+.. image:: https://github.com/ncparab/jenkins/blob/master/docs/Capture1.PNG
 
 Open another terminal for same server as above and start avro console producer 
 
@@ -214,7 +214,6 @@ e.g. Original  value of MODIFIED_DATE for id 2 is 2018-07-06
 .. image:: https://github.com/N-CP/github/blob/master/Capture4.JPG
 
 Updated value
-
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture6.JPG
 
