@@ -42,7 +42,7 @@ Step1
 
 - Install java8 on each server(login to root)
 
-.. Command  $yum install java
+.. Command::  $yum install java
 
 Step2
 ------
@@ -50,9 +50,9 @@ Step2
 - Download confluent on each server using following command
 
 
-.. Command $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
+.. Command:: $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
 
-           $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
+             $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
 Step3
 ------
@@ -61,9 +61,9 @@ Step3
 
 - Go to the `bin` location of confluent(form me it's in root)
 
-.. Command $cd /root/confluent-4.1.0/bin
+.. Command:: $cd /root/confluent-4.1.0/bin
 
-           $./zookeeper-server-start  ../etc/kafka/zookeeper.properties
+             $./zookeeper-server-start  ../etc/kafka/zookeeper.properties
 
 - If it is running on 2181 port then start it in daemon mode as follow
 
