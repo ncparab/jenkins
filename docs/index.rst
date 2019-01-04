@@ -18,7 +18,7 @@ Kafka is generally used for two broad classes of applications:
 - Building real-time streaming data pipelines that reliably get data between systems or applications
 - Building real-time streaming applications that transform or react to the streams of data
 
-.. image:: https://github.com/ncparab/jenkins/blob/master/docs/Capture2.PNG
+.. image:: ![cluster](https://github.com/N-CP/github/blob/master/Capture1.JPG)
 
 ############################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
@@ -121,7 +121,7 @@ It will list topic which is created.
 
 Now you can send the messages from producer and those messages get populated at consumers as follow
 
-.. image:: https://github.com/N-CP/github/blob/master/Capture1.JPG
+.. image:: https://github.com/N-CP/github/blob/master/Capture0.JPG
   :width: 500
 
 Step6
