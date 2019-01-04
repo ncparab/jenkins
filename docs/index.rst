@@ -8,15 +8,18 @@ Apache Kafka® is a distributed streaming platform. What exactly does that mean?
 A streaming platform has three key capabilities:
 ------------------------------------------------
 
-    *Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
-    *Store streams of records in a fault-tolerant durable way.
-    *Process streams of records as they occur.
+    Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
+    
+    Store streams of records in a fault-tolerant durable way.
+    
+    Process streams of records as they occur.
 
 Kafka is generally used for two broad classes of applications:
 --------------------------------------------------------------
 
-    *Building real-time streaming data pipelines that reliably get data between systems or applications
-    *Building real-time streaming applications that transform or react to the streams of data
+    Building real-time streaming data pipelines that reliably get data between systems or applications
+    
+    Building real-time streaming applications that transform or react to the streams of data
 
 ##########################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
