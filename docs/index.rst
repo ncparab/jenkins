@@ -147,7 +147,7 @@ Now you can send the messages from producer and those messages get populated at 
 
 .. image:: 1.PNG
   :width: 700px
-  :height: 500px
+  :height: 400px
   :alt: alternate text
 
 Step6
@@ -248,7 +248,7 @@ If is is running on port 8081 then start it in daemon mode
 
 .. image:: 2.PNG
   :width: 700px
-  :height: 500px
+  :height: 400px
   :alt: alternate text
 
 - Open another terminal for same server as above and start avro console producer 
@@ -265,14 +265,14 @@ It will get hang for some time. You have to enter the values as follow
 
 .. image:: 3.PNG
   :width: 700px
-  :height: 500px
+  :height: 400px
   :alt: alternate text
   
 - The table will get create(same as topic name) in mysql. Start the mysql on other server
 
 .. image:: 4.PNG
   :width: 700px
-  :height: 500px
+  :height: 400px
   :alt: alternate text
   
 - You can update the data. Insert the different value for same id. You can see the value get updated in mysql
@@ -281,17 +281,17 @@ e.g. Original  value of MODIFIED_DATE for id 2 is 2018-07-06
 
 .. image:: 5.PNG
   :width: 700px
-  :height: 500px
+  :height: 400px
   :alt: alternate text
   
 - Updated value
 
 .. image:: 6.PNG
-  :width: 700px
-  :height: 500px
+  :width: 600px
+  :height: 400px
   :alt: alternate text
   
 .. image:: 7.PNG
   :width: 700px
-  :height: 500px
+  :height: 400px
   :alt: alternate text
