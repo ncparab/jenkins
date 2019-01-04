@@ -2,7 +2,7 @@
 Introduction to Kafka
 ################################
 
-Apache Kafka® is a distributed streaming platform. What exactly does that mean?
+Apache Kafka is a distributed streaming platform. What exactly does that mean?
 -------------------------------------------------------------------------------
 
 A streaming platform has three key capabilities:
