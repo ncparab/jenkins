@@ -11,16 +11,16 @@ In this setup we are going to send data from kafka avro producer to aws aurora m
 Steps to be followed
 ####################
 
-Step1:-
-=======
+Step1
+#######
 
 Install java8 on each server(login to root)
 -------------------------------------------
 
 .. Command        $yum install java
 
-Step2:- 
-=======
+Step2 
+#######
 
 Download confluent on each server using following command
 ---------------------------------------------------------
@@ -29,8 +29,8 @@ Download confluent on each server using following command
 
            $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
-Step3:-
-=======
+Step3
+#######
 
 Start the zookeeper on each server using following command.
 -----------------------------------------------------------
@@ -42,14 +42,14 @@ Go to the `bin` location of confluent(form me it's in root)
            $./zookeeper-server-start  ../etc/kafka/zookeeper.properties
 
 If it is running on 2181 port then start it in daemon mode as follow
----------------------------------------------------------------------
+
 
 .. Command $ ./zookeeper-server-start -daemon ../etc/kafka/zookeeper.properties
 
            $netstat -anp|grep 2181     (for checking, it is running or not)
 
-Step4:-
-=======
+Step4
+#######
 
 Start the kafka server on each server.
 ---------------------------------------
@@ -74,11 +74,11 @@ If it running on port 9092 then again start it in daemon mode as follow
 
            $netstat -anp|grep 9092 
 
-Step5:-
-=======
+Step5
+######
 
 Check the cluster setup. 
-#######################
+========================
 
 Create a topic on one of the server.
 ------------------------------------
@@ -88,7 +88,7 @@ Create a topic on one of the server.
             $./kafka-topics --create --zookeeper x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181 -- replication-factor 1 --partitions 1 --topic demotopic
 
 You can check that topic is created on each server using following command
---------------------------------------------------------------------------
+
 
 .. Command $./kafka-topics --list --zookeeper  x.x.x.x:2181,x.x.x.x:2181,x.x.x.x:2181
 
@@ -108,8 +108,8 @@ Now you can send the messages from producer and those messages get populated at 
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture1.JPG
 
-Step6:-
-=======
+Step6
+######
 
 Install mysql on one of the server and start the mysql service(login to root)
 -----------------------------------------------------------------------------
@@ -118,8 +118,8 @@ Install mysql on one of the server and start the mysql service(login to root)
 
            $service mysqld start
 
-Step7:-
-=======
+Step7
+#######
 
 Create mysql instance on aws and login to mysql instance as follow
 ------------------------------------------------------------------
@@ -143,8 +143,8 @@ Set the classpath on one of the server where you want to run schema registry and
 
        $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
-Step8:-
-=======
+Step8
+######
 
 Start schema registry on same server where you set classpath
 ------------------------------------------------------------
