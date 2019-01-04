@@ -10,14 +10,15 @@ I've contributed to:
 *   Arkestra
 *   Django
 
+############
 Introduction
-------------
+############
 
 This the page about testing read the docs documentation with github.
 
-
+############
 Things To Do
-------------
+############
 
     1)Create a github repo 
 
