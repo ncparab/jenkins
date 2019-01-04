@@ -107,6 +107,7 @@ Start the consumer on other two servers
 Now you can send the messages from producer and those messages get populated at consumers as follow
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture1.JPG
+   :width: 500
 
 Step6
 ######
@@ -196,6 +197,7 @@ Start kafka standalone as follow
 
 
 .. image:: https://github.com/ncparab/jenkins/blob/master/docs/Capture1.PNG
+   :width: 500
 
 Open another terminal for same server as above and start avro console producer 
 
@@ -208,19 +210,24 @@ It will get hang for some time. You have to enter the values as follow
        {"id": 1,"PARTY_TYPE_ID":100,"PARTY_DESCRIPTION": "PERSONAL" ,"PARTY_SHORT_DESCRIPTION":"S",     "SOURCE_SYSTEM":"sys","CREATED_DATETIME":"2018-07-05", "MODIFIED_DATETIME":"2018-07-09"}
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture2.JPG
-
+   :width: 500
+   
 The table will get create(same as topic name) in mysql. Start the mysql on other server
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture3.JPG
-
+  :width: 500
+  
 You can update the data. Insert the different value for same id. You can see the value get updated in mysql
 
 e.g. Original  value of MODIFIED_DATE for id 2 is 2018-07-06
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture4.JPG
+  :width: 500
 
 Updated value
 
-.. image:: https://github.com/N-CP/github/blob/master/Capture6.JPG
-
+.. image:: https://github.com/N-CP/github/blob/master/Capture6.JPG  
+  :width: 500
+  
 .. image:: https://github.com/N-CP/github/blob/master/Capture5.JPG
+  :width: 500
