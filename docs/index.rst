@@ -36,14 +36,12 @@ Steps to be followed
 
 :ref:`Step1`
 
-
 Install java8 on each server(login to root)
 ===========================================
 
 .. Command        $yum install java
 
 :ref:`Step2`
-
 
 Download confluent on each server using following command
 ==========================================================
