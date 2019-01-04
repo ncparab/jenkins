@@ -3,7 +3,7 @@ Introduction to Kafka
 ################################
 
 Apache Kafka® is a distributed streaming platform. What exactly does that mean?
-==============================================================================
+-------------------------------------------------------------------------------
 
 A streaming platform has three key capabilities:
 ------------------------------------------------
@@ -21,18 +21,16 @@ Kafka is generally used for two broad classes of applications:
 
 
 
-##########################################################################
+
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
 ##########################################################################
 
 Use-Case
-########
+--------
 
 In this setup we are going to send data from kafka avro producer to aws aurora mysql database. For this we are using avro converter to convert schema.
 
 
-
-####################
 Steps to be followed
 ####################
 
