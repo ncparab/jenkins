@@ -18,6 +18,9 @@ Kafka is generally used for two broad classes of applications:
 - Building real-time streaming data pipelines that reliably get data between systems or applications
 - Building real-time streaming applications that transform or react to the streams of data
 
+.. image:: C:\Users\Tesseract\Documents\Capture2.PNG
+  :width: 300
+
 ############################################################################
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
 ############################################################################
@@ -120,7 +123,7 @@ It will list topic which is created.
 Now you can send the messages from producer and those messages get populated at consumers as follow
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture1.JPG
-   :width: 500
+  :width: 500
 
 Step6
 ------------
@@ -218,7 +221,7 @@ It will get hang for some time. You have to enter the values as follow
        {"id": 1,"PARTY_TYPE_ID":100,"PARTY_DESCRIPTION": "PERSONAL" ,"PARTY_SHORT_DESCRIPTION":"S",     "SOURCE_SYSTEM":"sys","CREATED_DATETIME":"2018-07-05", "MODIFIED_DATETIME":"2018-07-09"}
 
 .. image:: https://github.com/N-CP/github/blob/master/Capture2.JPG
-   :width: 500
+  :width: 500
    
 - The table will get create(same as topic name) in mysql. Start the mysql on other server
 
