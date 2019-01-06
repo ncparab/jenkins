@@ -302,7 +302,7 @@ e.g. Original  value of MODIFIED_DATE for id 2 is 2018-07-06
 - Updated value
 
 .. image:: 6.PNG
-  :width: 600px
+  :width: 800px
   :height: 400px
   :alt: alternate text
   
