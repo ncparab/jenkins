@@ -216,25 +216,40 @@ If is is running on port 8081 then start it in daemon mode
 
 - Change following parameter in "connect-avro-standalone.properties" file.
 
-       ``bootstrap.servers=x.x.x.x:9092``       
+       ``bootstrap.servers=x.x.x.x:9092`` 
+       
        ``rest.port=8083``
 
 - create a file at "/root/confluent-4.1.0/etc/kafka-connect-jdbc/sink-mysql-jdbc.properties" with bellow content
 
        ``name=sink-mysql-insert-update``
+       
        ``connector.class=io.confluent.connect.jdbc.JdbcSinkConnector``
+       
        ``tasks.max=1``
+       
        ``topics=orders_data``
+       
        ``connection.url=jdbc:mysql://hostname:3306/test?user=test&password=test``
+       
        ``auto.create=true``
+       
        ``insert.mode=upsert``
+       
        ``pk.mode=record_value``
+       
        ``pk.fields=id``
+       
        ``#key.serializer=org.apache.kafka.common.serialization.StringSerializer``
+       
        ``#key.converter=org.apache.kafka.connect.storage.StringConverter``
+       
        ``key.converter=org.apache.kafka.connect.storage.StringConverter``
+       
        ``#value.converter=org.apache.kafka.connect.storage.StringConverter``
+       
        ``#key.serializer=io.confluent.kafka.serializers.KafkaAvroSerializer``
+       
        ``#value.serializer=io.confluent.kafka.serializers.KafkaAvroSerializer``
 
 - Start kafka standalone as follow
