@@ -1,3 +1,9 @@
+.. toctree::
+   :maxdepth: 2
+
+   StepsTobeFollowed
+
+
 ################################
 Introduction to Kafka
 ################################
@@ -55,4 +61,4 @@ In this setup we are going to send data from kafka avro producer to aws aurora m
 .. toctree::
    :maxdepth: 2
 
-   StepsToBefollow
+   StepsTobeFollowed
