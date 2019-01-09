@@ -55,8 +55,10 @@ In this setup we are going to send data from kafka avro producer to aws aurora m
 Steps to be followed
 ##########################
 
-Step1
-=====
+.. toctree::
+   :maxdepth: 2
+
+   Step1
 
 - Install java8 on each server(login to root)
 
@@ -64,8 +66,8 @@ Step1
  
   $yum install java
 
-Step2
-=====
+  Step2
+  
 
 - Download confluent on each server using following command
 
@@ -76,8 +78,8 @@ Step2
 
   $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
-Step3
-=====
+  Step3
+
 
 - Start the zookeeper on each server using following command.
 
@@ -98,8 +100,7 @@ Step3
 
    $netstat -anp|grep 2181     (for checking, it is running or not)
 
-Step4
-=====
+   Step4
 
 - Start the kafka server on each server.
 
@@ -127,8 +128,7 @@ Step4
 
    $netstat -anp|grep 9092 
 
-Step5
-=====
+   Step5
 
 - Check the cluster setup. 
 
@@ -168,8 +168,7 @@ Now you can send the messages from producer and those messages get populated at 
   :height: 400px
   :alt: alternate text
 
-Step6
-=====
+  Step6
 
 - Install mysql on one of the server and start the mysql service(login to root)
 
@@ -179,8 +178,7 @@ Step6
 
    $service mysqld start
 
-Step7
-=====
+   Step7
 
 - Create mysql instance on aws and login to mysql instance as follow
 
@@ -209,8 +207,7 @@ Step7
 
     $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
-Step8
-======
+    Step8
 
 - Start schema registry on same server where you set classpath
 
