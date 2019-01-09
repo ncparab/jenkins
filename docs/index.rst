@@ -54,4 +54,5 @@ In this setup we are going to send data from kafka avro producer to aws aurora m
 .. toctree::
    :maxdepth: 2
 
+   test
    StepsTobeFollowed
