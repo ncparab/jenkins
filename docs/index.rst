@@ -18,20 +18,24 @@ Introduction to Kafka
     KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
     under the License.
+    
+.. content:: Table of content
 
+Introduction to kafka
+-----------------------
 
 Apache Kafka is a distributed streaming platform. What exactly does that mean?
-==============================================================================
+
 
 A streaming platform has three key capabilities:
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
 - Store streams of records in a fault-tolerant durable way.
 - Process streams of records as they occur.
 
 Kafka is generally used for two broad classes of applications:
----------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Building real-time streaming data pipelines that reliably get data between systems or applications
 - Building real-time streaming applications that transform or react to the streams of data
@@ -42,23 +46,21 @@ Kafka is generally used for two broad classes of applications:
   :alt: alternate text
   
 
-############################################################################
+
 Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster) 
-############################################################################
+--------------------------------------------------------------------------
 
 Use-Case
 ========
 
 In this setup we are going to send data from kafka avro producer to aws aurora mysql database. For this we are using avro converter to convert schema.
 
-##########################
+#########################
 Steps to be followed
 ##########################
 
-.. toctree::
-   :maxdepth: 2
-
-   Step1
+Step1
+=======
 
 - Install java8 on each server(login to root)
 
@@ -66,8 +68,8 @@ Steps to be followed
  
   $yum install java
 
-  Step2
-  
+Step2
+=====  
 
 - Download confluent on each server using following command
 
@@ -77,9 +79,9 @@ Steps to be followed
   $wget http://packages.confluent.io/archive/4.1/confluent-oss-4.1.0-2.11.tar.gz
 
   $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
-                      
-  Step3
-
+                       
+Step3
+=====
 
 - Start the zookeeper on each server using following command.
 
@@ -100,7 +102,8 @@ Steps to be followed
 
    $netstat -anp|grep 2181     (for checking, it is running or not)
 
-   Step4
+Step4
+======
 
 - Start the kafka server on each server.
 
@@ -128,7 +131,8 @@ Steps to be followed
 
    $netstat -anp|grep 9092 
 
-   Step5
+Step5
+=====
 
 - Check the cluster setup. 
 
@@ -168,7 +172,8 @@ Now you can send the messages from producer and those messages get populated at 
   :height: 400px
   :alt: alternate text
 
-  Step6
+Step6
+======
 
 - Install mysql on one of the server and start the mysql service(login to root)
 
@@ -207,7 +212,8 @@ Now you can send the messages from producer and those messages get populated at 
 
     $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
-    Step8
+Step8
+======
 
 - Start schema registry on same server where you set classpath
 
