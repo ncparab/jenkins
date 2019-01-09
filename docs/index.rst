@@ -2,18 +2,36 @@
 Introduction to Kafka
 ################################
 
+..  Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+..    http://www.apache.org/licenses/LICENSE-2.0
+
+..  Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+
 Apache Kafka is a distributed streaming platform. What exactly does that mean?
--------------------------------------------------------------------------------
+==============================================================================
 
 A streaming platform has three key capabilities:
-================================================
+------------------------------------------------
 
 - Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.
 - Store streams of records in a fault-tolerant durable way.
 - Process streams of records as they occur.
 
 Kafka is generally used for two broad classes of applications:
-==============================================================
+---------------------------------------------------------------
 
 - Building real-time streaming data pipelines that reliably get data between systems or applications
 - Building real-time streaming applications that transform or react to the streams of data
@@ -29,7 +47,7 @@ Kafka cluster and  Kafka connect JDBC sinc setup(e.g. For 3 nodes cluster)
 ############################################################################
 
 Use-Case
----------
+========
 
 In this setup we are going to send data from kafka avro producer to aws aurora mysql database. For this we are using avro converter to convert schema.
 
@@ -38,7 +56,7 @@ Steps to be followed
 ##########################
 
 Step1
------
+=====
 
 - Install java8 on each server(login to root)
 
@@ -47,7 +65,7 @@ Step1
   $yum install java
 
 Step2
-------
+=====
 
 - Download confluent on each server using following command
 
@@ -59,7 +77,7 @@ Step2
   $tar –xvf  confluent-oss-4.1.0-2.11.tar.gz'
                       
 Step3
-------
+=====
 
 - Start the zookeeper on each server using following command.
 
@@ -81,7 +99,7 @@ Step3
    $netstat -anp|grep 2181     (for checking, it is running or not)
 
 Step4
--------
+=====
 
 - Start the kafka server on each server.
 
@@ -110,7 +128,7 @@ Step4
    $netstat -anp|grep 9092 
 
 Step5
--------
+=====
 
 - Check the cluster setup. 
 
@@ -151,7 +169,7 @@ Now you can send the messages from producer and those messages get populated at 
   :alt: alternate text
 
 Step6
-------------
+=====
 
 - Install mysql on one of the server and start the mysql service(login to root)
 
@@ -162,7 +180,7 @@ Step6
    $service mysqld start
 
 Step7
------------
+=====
 
 - Create mysql instance on aws and login to mysql instance as follow
 
@@ -192,7 +210,7 @@ Step7
     $ export CLASSPATH=/usr/share/java/mysql-connector-java.jar:$CLASSPATH
 
 Step8
-------
+======
 
 - Start schema registry on same server where you set classpath
 
